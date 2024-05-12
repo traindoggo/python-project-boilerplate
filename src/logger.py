@@ -1,6 +1,6 @@
 import logging
 
-LOG_NAME = "log.log"
+LOG_NAME = "test.log"
 
 
 def set_logger(module_name):
@@ -8,7 +8,7 @@ def set_logger(module_name):
     logger.handlers.clear()
 
     stream_handler = logging.StreamHandler()
-    file_handler = logging.FileHandler(f"./log/{LOG_NAME}")
+    file_handler = logging.FileHandler(f"/tmp/{LOG_NAME}")
 
     formatter = logging.Formatter(
         "{asctime} [{levelname:<8s}] {filename}::{funcName}({lineno}) {message}",
